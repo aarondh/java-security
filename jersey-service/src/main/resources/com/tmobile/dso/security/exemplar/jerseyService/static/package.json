@@ -1,0 +1,15 @@
+{
+    "name": "org.daisleyharrison.security",
+    "version": "1.0.0",
+    "description": "",
+    "main": "",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Aaron G Daisley-Harrison",
+    "license": "ISC",
+    "dependencies": {
+        "animejs": "^3.0.1",
+        "popper.js": "^1.15.0"
+    }
+}

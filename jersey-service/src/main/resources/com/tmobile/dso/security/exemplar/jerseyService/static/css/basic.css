@@ -1,0 +1,59 @@
+@import "../bootstrap/css/bootstrap.min.css";
+label {
+  text-transform: capitalize;
+  font-variant: small-caps;
+}
+label:after {
+  content: ":";
+}
+.nav-masthead .nav-link {
+  color: #ff0074;
+}
+.modal.fade {
+  -webkit-transition: opacity .2s linear, none;
+  -moz-transition: opacity .2s linear, none;
+  -ms-transition: opacity .2s linear, none;
+  -o-transition: opacity .2s linear, none;
+  transition: opacity .2s linear, none;
+  top: 25%;
+}
+.user-picture-large {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  border-width: 2px;
+  border-color: #555;
+  border-style: solid;
+  overflow: hidden;
+  background-color: #999;
+  background-size: cover;
+}
+.user-picture-large.default-user-picture {
+  background-image: url("/static/images/defaultUserPicture.jpg");
+}
+.user-picture-small {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  border-width: 2px;
+  border-color: #555;
+  border-style: solid;
+  overflow: hidden;
+  background-color: #999;
+  background-size: cover;
+  margin-right: 5px;
+}
+.user-picture-small.default-user-picture {
+  background-image: url("/static/images/defaultUserPicture.jpg");
+}
+.user-area {
+  margin-left: 10px;
+  white-space: nowrap;
+  position: relative;
+}
+.user-area .user-name {
+  position: relative;
+}
+.user-picture-url {
+  font-size: smaller;
+}

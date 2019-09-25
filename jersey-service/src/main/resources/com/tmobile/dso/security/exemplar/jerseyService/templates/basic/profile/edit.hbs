@@ -1,0 +1,76 @@
+{{#>partials/coverPage title="Edit Profile" section="Profile" script="profile.js"}}
+
+<h1 class="cover-heading">Edit Profile</h1>
+<form class="ajax-form" data-method="PUT" data-nonce-required="true" data-success-func="submitSuccessful"
+    action="/c2id/api/profile/profiles/{{profile.id}}">
+    <input type="hidden" name="id" value="{{profile.id}}" />
+    <div class="container-fluid text-nowrap">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="alertSubmitFailed" class="alert alert-danger alert-dismissible fade d-none">
+                    <strong>Error!</strong><span id="htmlError"></span><span id="htmlErrorDescription">something
+                        unexpected happened</span>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 text-right">Id: </div>
+            <div class="col-sm-6 text-left">{{profile.id}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 text-right">First Name: </div>
+            <div class="col-sm-6"><input type="text" name="givenName" value="{{profile.givenName}}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 text-right">Middle Name: </div>
+            <div class="col-sm-6"><input type="text" name="middleName" value="{{profile.middleName}}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 text-right">Last Name: </div>
+            <div class="col-sm-6"><input type="text" name="familyName" value="{{profile.familyName}}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 text-right">User Name: </div>
+            <div class="col-sm-6"><input type="text" name="preferredUsername" value="{{profile.preferredUsername}}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 text-right">Email: </div>
+            <div class="col-sm-6"><input type="text" name="email" value="{{profile.email}}" /></div>
+        </div>
+        <div class="row errata">
+            <div class="col-sm-6 text-right">Created: </div>
+            <div class="col-sm-6 text-left">{{profile.created}}</div>
+        </div>
+        <div class="row errata">
+            <div class="col-sm-6 text-right">Created By: </div>
+            <div class="col-sm-6 text-left">{{profile.createdBy}}</div>
+        </div>
+        <div class="row errata">
+            <div class="col-sm-6 text-right">Modified: </div>
+            <div class="col-sm-6 text-left">{{profile.modified}}</div>
+        </div>
+        <div class="row errata">
+            <div class="col-sm-6 text-right">Modified By: </div>
+            <div class="col-sm-6 text-left">{{profile.modifiedBy}}</div>
+        </div>
+        <div class="row errata">
+            <div class="col-sm-6 text-right">Session started: </div>
+            <div class="col-sm-6 text-left">{{issuedAt}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><button type="submit" class="btn">Save Changes</button></div>
+        </div>
+    </div>
+</form>
+
+{{#>partials/modalDialog id="modelProfileSaved" title="Profile saved"}}
+<p>Your profile has been updated successful. Note that most profile changes will take affect the next time you log in.
+</p>
+{{/partials/modalDialog}}
+
+{{/partials/coverPage}}

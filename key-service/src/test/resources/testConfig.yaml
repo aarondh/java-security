@@ -1,0 +1,12 @@
+key-service:
+  keystores: 
+    test1:
+      type: JKS
+      keyPath: test1/
+      path: C:/Projects/org/daisleyharrison/security/key-service/src/test/resources/testkeystore.jks
+      password: 123456
+    test2:
+      type: JKS
+      keyPath: test2/
+      path: C:/Projects/org/daisleyharrison/security/key-service/src/test/resources/testkeystore.jks
+      password: 123456

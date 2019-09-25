@@ -1,0 +1,116 @@
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login to C2ID</h5>
+                <button id="btnLoginModalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="busyLogin" class="login-progress" role="progressbar">
+                    <div id="busyLoginBar" class="login-progress-bar" data-current="0">&nbsp;</div>
+                </div>
+                <div id="alertLoginFailed" class="row mt-1">
+                    <div class="col-sm">
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <strong>Error!</strong> Login failed. Your user name or password was not recognized.<br />
+                            If you have forgotten you password, you can reset it <a href="#"
+                                id="btnForgotAccount3">here</a>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="alertEmailNotRecognized" class="row mt-1">
+                    <div class="col-sm">
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <strong>Sorry</strong> we do not recognize that email address.<br />
+                            If you do no have an account <a id="btnCreateAccount3" href="#">create one here</a>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="secLoginStep1" class="login-step row mt-1">
+                    <div class="col-sm">
+                        <input type="hidden" id="txtFailedEmail" />
+                        <div class="container">
+                            <div class="row mt-1">
+                                <div class="col-sm">
+                                    <div class="row mt-1">
+                                        <div class="col-sm input-group">
+                                            <input class="form-control" type="email" placeholder="email address here" name="email" id="txtEmail" />
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1">
+                                        No account? <a id="btnCreateAccount1" href="#">Create one!</a>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <a id="btnForgotAccount1" href="#">Forgot your account?</a>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <a id="btnSigninOptions1" href="#">Login options</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="secLoginStep2" class="login-step row mt-1 hide ">
+                    <input type="hidden" id="txtFailedPassword" />
+                    <div class="col-sm">
+                        <input id="txtIssuer" type="hidden" name="issuer" value="/c2id/basic/index" />
+                        <div class="container">
+                            <div class="row mt-1">
+                                <div class="col-sm">
+                                    <div class="row mt-1">
+                                        <div class="col-sm input-group">
+                                            <input class="form-control" type="password" name="password"
+                                                id="txtPassword" placeholder="password here" />
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1">
+                                        No account? <a id="bnCreateAccount2" href="#">Create one!
+                                    </div>
+                                    <div class="row mt-1">
+                                        <a id="btnForgotAccount2" href="#">Forgot your account?</a>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <a id="btnSigninOptionss2" href="#">Login options</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="secLoginStep3" class="row mt-1">
+                    <div class="col-sm">
+                        <p>We see that you used <span id="txtOpenIdIssuerLabel" class="openid-domain-label">unknown</span>
+                            to log into our system last time. We will take you there now.
+                            If you wish to login using another provider please press <a id="btnOpenIdSigninOptions"
+                                href="#">Other Sign In Options</a> or <a id="btnOpenIdStartOver" href="#">Start Over</a>
+                        </p>
+                        <form id="formAuthLogin" method="POST" action="/c2id/api/auth/openid_login">
+                            <input id="txtOpenIdIssuer" type="hidden" name="issuer" value="microsoft.com" />
+                            <input id="txtOpenIdEmail" type="hidden" name="email" />
+                            <input id="txtOpenIdRedirectUri" type="hidden" name="redirectUri" value="basic/index" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="secLoginStep4" class="row mt-1">
+                {{>partials/loginOptions}}
+            </div>
+            <div id="secLoginStep5" class="row mt-1">
+                {{>partials/createAccount}}
+            </div>
+            <div id="secLoginStep6" class="row mt-1">
+                {{>partials/forgotAccount}}
+            </div>
+            <div id="secLoginFooter" class="modal-footer">
+                <button id="btnLoginPrevious" type="button" class="btn btn-secondary">&lt; return to login</button>
+                <button id="btnLoginNext" type="button" class="btn btn-primary">Next</button>
+            </div>
+        </div>
+    </div>
+</div>

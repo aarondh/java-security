@@ -1,0 +1,14 @@
+*.jar
+/**/.classpath
+/**/.project
+/**/.settings
+/**/.vscode
+/**/target
+/**/node_modules
+/org.daisleyharrison.security.code-workspace
+!/.yaml
+!/.json
+!/**/.yaml
+!/**/.json
+/docs/~$*
+/**/data/*

@@ -1,0 +1,51 @@
+{{#>partials/detailPage title="Proflie Activity" section="Activity"}}
+<h1 class="cover-heading">Profile Activity</h1>
+<div class="container-fluid text-nowrap">
+    <div class="row errata">
+        <div class="col-sm-6 text-right">Created: </div>
+        <div class="col-sm-6 text-left">{{profile.created}}</div>
+    </div>
+    <div class="row errata">
+        <div class="col-sm-6 text-right">Created By: </div>
+        <div class="col-sm-6 text-left">{{profile.createdBy}}</div>
+    </div>
+    <div class="row errata">
+        <div class="col-sm-6 text-right">Modified: </div>
+        <div class="col-sm-6 text-left">{{profile.modified}}</div>
+    </div>
+    <div class="row errata">
+        <div class="col-sm-6 text-right">Modified By: </div>
+        <div class="col-sm-6 text-left">{{profile.modifiedBy}}</div>
+    </div>
+    <div class="row errata">
+        <div class="col-sm-6 text-right">Session started: </div>
+        <div class="col-sm-6 text-left">{{issuedAt}}</div>
+    </div>
+    <div class="row detail-area">
+        <table class="paged-table">
+            <thead>
+                <th class="text-left">
+                    When
+                </th>
+                <th class="text-left">
+                    Activity
+                </th>
+            </thead>
+            <tbody>
+                {{#each activities}}
+                <tr>
+                    <td class="errata">{{this.created}}</td>
+                    <td class="text-left">{{this.activityType}}</td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td> </td>
+                    <td>No activity found for this profile</td>
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{{/partials/detailPage}}

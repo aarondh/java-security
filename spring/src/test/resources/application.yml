@@ -1,0 +1,3 @@
+configuration-service:
+    path: "classpath:fubar.yaml"
+signature: fubar

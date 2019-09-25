@@ -1,0 +1,9 @@
+{{#>partials/coverPage title="Logged Out" section="Logged Out"}}
+        <h1 class="cover-heading">You are now logged out</h1>
+        <p class="lead">At this point the open id server should have recorded your session end.</p>
+        <p class="lead">
+          {{#unless session}}
+          <a id="btnHomeShowLogin" href="#" class="btn btn-lg btn-secondary">Log in</a>
+          {{/unless}}
+        </p>
+{{/partials/coverPage}}

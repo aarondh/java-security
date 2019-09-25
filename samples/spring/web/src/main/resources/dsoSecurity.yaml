@@ -1,0 +1,41 @@
+cypher:
+  cyphers:
+    internalConcealString:
+      algorithm: RSA/ECB/PKCS1Padding
+      keyPath: root/concealString
+    externalConcealString:
+      algorithm: RSA/ECB/PKCS1Padding
+      keyPath: root/concealString
+    datastore-secret:
+      algorithm: AES/ECB/PKCS5Padding
+      keyPath: root/semetric.key.test
+    endorser:
+      algorithm: SHA1withRSA
+      keyPath: root/endorser
+    passwordHash:
+      algorithm: PBKDF2WithHmacSHA512
+      salt: IGeecOf0QuizlIvuDejBOg==
+      iterations: 65536
+      keyLength: 512
+key-service: 
+  keystores:
+    root:
+      keyPath: root/
+      path: C:/Projects/org/daisleyharrison/security/samples/spring/web/cypherstore.jks
+      type: JKS
+      password: 123456
+datastore:
+  mongo:
+    clientUri: mongodb://localhost:27017
+    database: mytestdb
+  cypher: datastore-secret
+tokenizer:
+  token-types:
+    PoP:
+      type: jws
+      alg-header: ES256
+      key: root/client-keypair-ec256
+      issuer: https://some.other.company.com
+      audience: https://daisleyharrison.com
+      expiry: 30
+      not-before: 2

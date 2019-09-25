@@ -1,0 +1,156 @@
+{
+    "issuers": [
+        {
+            "issuer": "google.com",
+            "token_jsonRequestSupported": true,
+            "discovery_endpoint": "https://accounts.google.com/.well-known/openid-configuration",
+            "properties": [
+                {
+                    "name": "prompt",
+                    "usage": "AUTHENTICATION",
+                    "restpart": "QUERY",
+                    "default_value": "consent",
+                    "required": true
+                },
+                {
+                    "name": "response_type",
+                    "usage": "AUTHENTICATION",
+                    "restpart": "QUERY",
+                    "default_value": "code",
+                    "required": true
+                },
+                {
+                    "name": "scope",
+                    "usage": "AUTHENTICATION",
+                    "restpart": "QUERY",
+                    "default_value": "profile",
+                    "required": true
+                },
+                {
+                    "name": "access_type",
+                    "usage": "AUTHENTICATION",
+                    "restpart": "QUERY"
+                },
+                {
+                    "name": "grant_type",
+                    "usage": "TOKEN",
+                    "restpart": "BODY",
+                    "default_value": "authorization_code",
+                    "required": true
+                },
+                {
+                    "name": "redirect_uri",
+                    "usage": "TOKEN",
+                    "restpart": "BODY",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "issuer": "microsoft.com",
+            "discovery_endpoint": "https://login.microsoftonline.com/common/v2.0/{tenant}/openid-configuration",
+            "properties": [
+                {
+                    "name": "tenant",
+                    "usage": "DISCOVERY",
+                    "restpart": "URI",
+                    "default_value": ".well-known",
+                    "required": true
+                },
+                {
+                    "name": "scope",
+                    "usage": "AUTHENTICATION",
+                    "restpart": "QUERY",
+                    "default_value": "openid",
+                    "required": true
+                },
+                {
+                    "name": "response_mode",
+                    "usage": "AUTHENTICATION",
+                    "restpart": "QUERY",
+                    "default_value": "query"
+                },
+                {
+                    "name": "response_type",
+                    "usage": "AUTHENTICATION",
+                    "restpart": "QUERY",
+                    "default_value": "code",
+                    "required": true
+                },
+                {
+                    "name": "response_type",
+                    "usage": "TOKEN",
+                    "restpart": "BODY",
+                    "default_value": "id_token",
+                    "required": true
+                },
+                {
+                    "name": "redirect_uri",
+                    "usage": "TOKEN",
+                    "restpart": "BODY",
+                    "required": true
+                },
+                {
+                    "name": "grant_type",
+                    "usage": "TOKEN",
+                    "restpart": "BODY",
+                    "default_value": "authorization_code",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "properties": [
+        {
+            "name": "client_id",
+            "usage": "AUTHENTICATION",
+            "restpart": "QUERY",
+            "required": true
+        },
+        {
+            "name": "login_hint",
+            "usage": "AUTHENTICATION",
+            "restpart": "QUERY"
+        },
+        {
+            "name": "prompt",
+            "usage": "AUTHENTICATION",
+            "restpart": "QUERY"
+        },
+        {
+            "name": "nonce",
+            "usage": "AUTHENTICATION",
+            "restpart": "QUERY",
+            "required": true
+        },
+        {
+            "name": "client_secret",
+            "usage": "TOKEN",
+            "restpart": "BODY",
+            "required": true
+        },
+        {
+            "name": "client_id",
+            "usage": "TOKEN",
+            "restpart": "BODY",
+            "required": true
+        },
+        {
+            "name": "redirect_uri",
+            "usage": "AUTHENTICATION",
+            "restpart": "QUERY",
+            "required": true
+        },
+        {
+            "name": "state",
+            "usage": "AUTHENTICATION",
+            "restpart": "QUERY"
+        },
+        {
+            "name": "scope",
+            "usage": "AUTHENTICATION",
+            "restpart": "QUERY",
+            "required": true
+        }
+    ]
+}

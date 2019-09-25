@@ -1,0 +1,124 @@
+server:
+  base_uri: http://localhost:3000/c2id/
+  packages: 
+    - org.daisleyharrison.security.samples.jerseyService
+    - org.daisleyharrison.security.samples.jerseyService.rest
+  statics:
+    "/static/": 
+      package: org/daisleyharrison/security/samples/jerseyService/static/
+      cache: false
+handlebars:
+  classLoader:
+    prefix: /org/daisleyharrison/security/samples/jerseyService/templates
+    suffix: .hbs
+CORSResponseFilter:
+  origin: http://localhost:3000
+  headers:
+    Access-Control-Allow-Origin: http://localhost:3000 ,https://accounts.google.com, https://login.microsoft.com
+    Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token, X-Requested-With, Content-Type, Authorization
+    Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS
+    Content-Security-Policy: default-src 'self'; img-src *; script-src 'self' https://code.jquery.com
+    Referrer-Policy: same-origin
+    X-Download-Options: noopen
+    X-Frame-Options: SAMEORIGIN
+    x-xss-protection: 1; mode=block
+    x-content-type: nosniff
+vault:
+  vault-root: C:/Projects/org/daisleyharrison/security/jersey-service/data/vault
+cypher:
+  cyphers:
+    internalConcealString:
+      algorithm: RSA/ECB/PKCS1Padding
+      keyPath: root/concealString
+    externalConcealString:
+      algorithm: RSA/ECB/PKCS1Padding
+      keyPath: root/concealString
+    datastore-secret:
+      algorithm: AES/ECB/PKCS5Padding
+      keyPath: root/semetric.key.test
+    endorser:
+      algorithm: SHA1withRSA
+      keyPath: root/endorser
+    passwordHash:
+      algorithm: PBKDF2WithHmacSHA512
+      salt: IGeecOf0QuizlIvuDejBOg==
+      iterations: 65536
+      keyLength: 512
+key-service: 
+  keystores:
+    root:
+      keyPath: root/
+      path: C:/Projects/org/daisleyharrison/security/jersey-service/cypherstore.jks
+      type: JKS
+      password: 123456
+datastore:
+  file-location: ./data/datastore-files
+  base-scan-package: org.daisleyharrison.security.data.models
+  cypher: datastore-secret
+openid:
+  google.com:
+    client_id: 883258534839-2u1g5loomng57574j7aa6r60uocfvo26.apps.googleusercontent.com
+    client_secret: 30iCMbAw9fl3x8bbiqxP872O
+  microsoft.com:
+    client_id:  fb0eeb43-d1e8-4b39-8de2-12c361029799
+    client_secret: Rx3XGaMrbgr8AmvOx9Jovx1EGJAX@@=.
+tokenizer:
+  token-types:
+    bearer:
+      type: jwe
+      alg-header: dir
+      content-encryption-alg: A128CBC-HS256
+      key: root/jwe-bearer
+      issuer: localhost
+      audience: localhost
+      subject: bearer
+      expiry: 30
+      not-before: 2
+    state:
+      type: jwe
+      alg-header: dir
+      content-encryption-alg: A128CBC-HS256
+      key: root/jwe-state
+      issuer: localhost
+      audience: localhost
+      subject: openid-state
+      expiry: 30
+      notBefore: 2
+authorization:
+  domain: localhost
+  maximum-invalid-logins: 3
+  lock-expiry-in-minutes: 120
+  token-expiry-in-minutes: 120
+  test-accounts:
+    9371f357-086f-423f-ba4c-3b378120f2c5:
+      givenName: Fred
+      middleName: F
+      familyName: Flintstone
+      preferredUsername: FredF
+      email: fred.flintstone@bedrock.com
+      hashedPassword: 6eCVv/jVvfFMB1frT+euWNwIPdSTzqsaO93e2g3VYDCsLXqQwqNPh6BwOyDl5qqxHZrHGRlBG3lUVJKjTX2PZg==
+      phoneNumber: 2069158330
+      pictureUrl: /static/images/fredf.jpg
+      roles: [Basic]
+      issuers: 
+        - name: localhost
+          iss: localhost
+          sub: 9371f357-086f-423f-ba4c-3b378120f2c5
+          email: fred.flintstone@bedrock.com
+          primary: true
+    3e0ec29e-ac25-4ffe-b1c1-c2e9773d6e3e:
+      givenName: Aaron
+      middleName: G
+      familyName: Daisley-Harrison
+      preferredUsername: AaronDH
+      email: aaron@daisley-harrison.com
+      phoneNumber: 2069158330
+      pictureUrl: /static/images/aarondh.jpg
+      roles: [Basic, Admin]
+      issuers: 
+        - name: google.com
+          iss: https://accounts.google.com
+          sub: 117522011160330953244
+          email: aaron@daisley-harrison.com
+          primary: true
+

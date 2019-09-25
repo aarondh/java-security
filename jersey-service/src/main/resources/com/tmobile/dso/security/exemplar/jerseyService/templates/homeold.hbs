@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  {{>partials/head title="C2ID - Home"}} 
+
+  <body class="text-center {{#if authorized}}body-authorized{{else}}body-anonymous{{/if}}">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+     {{>partials/header section="Home"}}
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Daisley-Harrison Cybersecurity<br/> Web Application Samples</h1>
+        <p class="lead">This secure web application is based on a set of open source java security libraries designed to simplify the development of secure web applications using the latest techniques developed by the Cyber Security Team</p>
+        <p class="lead">
+          <a href="/c2id/home/features" class="btn btn-lg btn-secondary">Learn More</a>
+          {{#unless authorized}}
+          <a id="btnHomeShowLogin" href="#" class="btn btn-lg btn-secondary">Log in</a>
+          {{/unless}}
+        </p>
+      </main>
+
+    {{>partials/footer}}
+
+    </div>
+  </body>
+</html>

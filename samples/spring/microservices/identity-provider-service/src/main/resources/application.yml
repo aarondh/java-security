@@ -1,0 +1,79 @@
+server:
+    port: 8086
+spring:
+    application:
+        name: identity-provider-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+json:
+    db:
+        files:
+            location: "C:\\Projects\\org\\daisleyharrison\\security\\samples\\spring\\microservices\\identity-provider-service\\data"
+        scan:
+            package: org.daisleyharrison.security.samples.spring.microservices.identityservice.models
+cypher:
+  cyphers:
+    internalConcealString:
+      algorithm: RSA/ECB/PKCS1Padding
+      keyPath: root/concealString
+    externalConcealString:
+      algorithm: RSA/ECB/PKCS1Padding
+      keyPath: root/concealString
+    datastore-secret:
+      algorithm: AES/ECB/PKCS5Padding
+      keyPath: root/semetric.key.test
+    endorser:
+      algorithm: SHA1withRSA
+      keyPath: root/endorser
+    passwordHash:
+      algorithm: PBKDF2WithHmacSHA512
+      salt: IGeecOf0QuizlIvuDejBOg==
+      iterations: 65536
+      keyLength: 512
+key-service: 
+  keystores:
+    root:
+      keyPath: root/
+      path: C:/Projects/org/daisleyharrison/security/jersey-service/cypherstore.jks
+      type: JKS
+      password: 123456
+datastore:
+  mongo:
+    clientUri: mongodb://localhost:27017
+    database: identity
+  cypher: datastore-secret
+tokenizer:
+  token-types:
+    encryptedIdToken:
+      type: jwe
+      alg-header: dir
+      content-encryption-alg: A128CBC-HS256
+      key: root/jwe-bearer
+      issuer: localhost
+      audience: localhost
+      expiry: 30
+      not-before: 2
+    signedIdToken:
+      type: jws
+      alg-header: PS256
+      signer: root/concealedstring
+      issuer: https://daisleyharrison.com
+      audience: unknown
+      expiry: 30
+      not-before: 2
+    state:
+      type: jwe
+      alg-header: dir
+      content-encryption-alg: A128CBC-HS256
+      key: root/jwe-state
+      issuer: localhost
+      audience: localhost
+      subject: openid-state
+      expiry: 30
+      notBefore: 2
+
+
+
+

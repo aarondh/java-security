@@ -1,0 +1,49 @@
+datastore:
+  file-location: "./tokenizer-service/test-files"
+  base-scan-package: org.daisleyharrison.security.data.models
+key-service:
+  keystores: 
+    test:
+      type: JKS
+      keyPath: test/
+      path: C:/Projects/org/daisleyharrison/security/tokenizer-service/src/test/resources/testkeystore.jks
+      password: 123456
+tokenizer:
+  token-types:
+    opaque:
+      type: opaque
+      issuer: org.daisleyharrison
+      audience: org.daisleyharrison.readers
+      subject: test-token
+      expires: 15
+      not-before: 2
+
+    plaintext:
+      type: jwt
+      issuer: org.daisleyharrison
+      audience: org.daisleyharrison.readers
+      subject: test-token
+      expires: 15
+      not-before: 2
+
+    aes:
+      type: jwe
+      alg-header: dir
+      content-encryption-alg: A128CBC-HS256
+      key: test/jwe-bearer
+      issuer: org.daisleyharrison
+      audience: org.daisleyharrison.readers
+      subject: test-token
+      expires: 15
+      not-before: 2
+
+    chacha20:
+      type: jwe
+      alg-header: dir
+      content-encryption-alg: C20P
+      key: test/jwe-bearer
+      issuer: org.daisleyharrison
+      audience: org.daisleyharrison.readers
+      subject: test-token
+      expires: 15
+      not-before: 2

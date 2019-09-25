@@ -1,0 +1,4 @@
+datastore:
+  mongo:
+    clientUri: mongodb://localhost:27017
+    database: mytestdb

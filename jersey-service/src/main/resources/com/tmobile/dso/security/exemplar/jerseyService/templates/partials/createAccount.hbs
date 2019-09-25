@@ -1,0 +1,71 @@
+<div class="col-sm create-account-group">
+    <div class="row mt-1">
+        <div class="col-sm">
+            Create a new account
+        </div>
+    </div>
+        <div id="alertEmailNotRecognized hide" class="row mt-1">
+            <div class="col-sm">
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <strong>Sorry</strong> we could not create the account with the information provided<span id="#txtAccountCreationFailedReason>.</a>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-1">
+        <div class="col-sm input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text login-label">First Name</span>
+            </div>
+            <input class="form-control jq-watermark" data-required="true" title="First name" type="text" name="givenName" id="txtNewGivenName" />
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-sm input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text login-label">Last Name</span>
+            </div>
+            <input class="form-control" type="text" data-required="true" name="middleName" id="txtNewMiddleName" />
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-sm input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text login-label">Last Name</span>
+            </div>
+            <input class="form-control" type="text" data-required="true" name="familyName" id="txtNewFamilyName" />
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-sm input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text login-label">User Name</span>
+            </div>
+            <input class="form-control" type="text" data-required="true" name="preferredUsername" id="txtPreferredUsername" />
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-sm input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text login-label">Email</span>
+            </div>
+            <input class="form-control" type="email" data-required="true" name="email" id="txtNewEmail" />
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-sm input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text login-label">Password</span>
+            </div>
+            <input class="form-control" data-required="true" type="password" name="password" id="txtNewPassword" />
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-sm input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text login-label">Repeat Password</span>
+            </div>
+            <input class="form-control" data-required="true" type="password" name="passwordRepeat" id="txtNewPasswordRepeat" />
+        </div>
+    </div>
+</div>

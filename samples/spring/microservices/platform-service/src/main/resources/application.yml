@@ -1,0 +1,73 @@
+server:
+    port: 8085
+spring:
+    application:
+        name: platform-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+platform-service:
+    cpe-datafeed: 
+        path: "C:\\Projects\\org\\daisleyharrison\\security\\samples\\spring\\microservices\\platform-service\\src\\main\\resources\\official-cpe-dictionary_v2.3.xml"
+        update: false
+        insert: true
+        skip: true
+cypher:
+  cyphers:
+    internalConcealString:
+      algorithm: RSA/ECB/PKCS1Padding
+      keyPath: root/concealString
+    externalConcealString:
+      algorithm: RSA/ECB/PKCS1Padding
+      keyPath: root/concealString
+    datastore-secret:
+      algorithm: AES/ECB/PKCS5Padding
+      keyPath: root/semetric.key.test
+    endorser:
+      algorithm: SHA1withRSA
+      keyPath: root/endorser
+    passwordHash:
+      algorithm: PBKDF2WithHmacSHA512
+      salt: IGeecOf0QuizlIvuDejBOg==
+      iterations: 65536
+      keyLength: 512
+key-service: 
+  keystores:
+    root:
+      keyPath: root/
+      path: C:/Projects/org/daisleyharrison/security/jersey-service/cypherstore.jks
+      type: JKS
+      password: 123456
+datastore:
+  mongo:
+    clientUri: mongodb://localhost:27017
+    database: mytestdb
+  cypher: datastore-secret
+tokenizer:
+  token-types:
+    encryptedIdToken:
+      type: jwe
+      alg-header: dir
+      content-encryption-alg: A128CBC-HS256
+      key: root/jwe-bearer
+      issuer: localhost
+      audience: localhost
+      expiry: 30
+      not-before: 2
+    signedIdToken:
+      type: jws
+      alg-header: PS256
+      key: root/concealedstring
+      issuer: https://daisleyharrison.com
+      audience: unknown
+      expiry: 30
+      not-before: 2
+    PoP:
+      type: jws
+      alg-header: ES256
+      key: root/client-keypair-ec256
+      issuer: https://some.other.company.com
+      audience: https://daisleyharrison.com
+      expiry: 30
+      not-before: 2

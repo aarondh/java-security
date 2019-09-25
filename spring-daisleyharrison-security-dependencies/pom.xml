@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+	<parent>
+  <groupId>org.daisleyharrison</groupId>
+		<artifactId>security</artifactId>
+		<version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>org.daisleyharrison.security</groupId>
+  <artifactId>spring-daisleyharrison-security-dependencies</artifactId>
+  <name>spring-daisleyharrison-security-dependencies</name>
+  <packaging>pom</packaging>
+
+  <dependencies>
+		<!--- Daisley-Harrison Security depenencies -->
+		
+		<dependency>
+			<groupId>org.cache2k</groupId>
+			<artifactId>cache2k-base-bom</artifactId>
+			<version>1.2.1.Final</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.24</version>
+		</dependency>
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcpkix-jdk15on</artifactId>
+				<version>1.62</version>
+			</dependency>
+		<dependency>
+			<groupId>org.bitbucket.b_c</groupId>
+			<artifactId>jose4j</artifactId>
+			<version>0.6.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xbean</groupId>
+			<artifactId>xbean-finder</artifactId>
+			<version>3.7</version>
+		</dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.11.0</version>
+        </dependency>
+			
+		<!--- Daisley-Harrison Security depenencies -->
+
+		<!--- Daisley-Harrison Security services -->
+		<dependency>
+			<groupId>org.daisleyharrison.security</groupId>
+			<artifactId>common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.daisleyharrison.security</groupId>
+			<artifactId>key-service</artifactId>
+			<version>${project.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.daisleyharrison.security</groupId>
+			<artifactId>cypher-service</artifactId>
+			<version>${project.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.daisleyharrison.security</groupId>
+			<artifactId>tokenizer-service</artifactId>
+			<version>${project.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.daisleyharrison.security</groupId>
+			<artifactId>configuration-service</artifactId>
+			<version>${project.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.daisleyharrison.security</groupId>
+			<artifactId>datastore-service-mongodb</artifactId>
+			<version>${project.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.daisleyharrison.security</groupId>
+			<artifactId>spring</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.daisleyharrison.security</groupId>
+			<artifactId>jose4j-extensions</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!--- Daisley-Harrison Security Services -->
+  </dependencies>
+
+</project>

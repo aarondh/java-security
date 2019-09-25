@@ -1,0 +1,72 @@
+{{#>partials/detailPage title="View Profile" section="Profile"}}
+<h1 class="cover-heading">View Profile</h1>
+<div class="container-fluid text-nowrap">
+    <div class="row">
+        <div class="col-sm-6 text-right">Id: </div>
+        <div class="col-sm-6 text-left">{{profile.id}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">First Name: </div>
+        <div class="col-sm-6 text-left">{{profile.givenName}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">Middle Name: </div>
+        <div class="col-sm-6 text-left">{{profile.middleName}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">Last Name: </div>
+        <div class="col-sm-6 text-left">{{profile.familyName}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">User Name: </div>
+        <div class="col-sm-6 text-left">{{profile.preferredUsername}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">Email: </div>
+        <div class="col-sm-6 text-left">{{profile.email}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">Phone: </div>
+        <div class="col-sm-6 text-left">{{profile.phoneNumber}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right">Picture: </div>
+        <div class="col-sm-6 text-left">
+            {{#if profile.pictureUrl}}
+            <img class="user-picture-large" src="{{profile.pictureUrl}}" alt="{{profile.pictureUrl}}">
+            <div class="user-picture-url">
+                {{profile.pictureUrl}}
+            </div>
+            {{else}}
+            <img class="user-picture-large" src="/static/images/defaultUserPicture.jpg" alt="default user picture">
+            {{/if}}
+        </div>
+    </div>
+    <div class="row errata">
+        <div class="col-sm-6 text-right">Created: </div>
+        <div class="col-sm-6 text-left">{{profile.created}}</div>
+    </div>
+    <div class="row errata">
+        <div class="col-sm-6 text-right">Created By: </div>
+        <div class="col-sm-6 text-left">{{profile.createdBy}}</div>
+    </div>
+    <div class="row errata">
+        <div class="col-sm-6 text-right">Modified: </div>
+        <div class="col-sm-6 text-left">{{profile.modified}}</div>
+    </div>
+    <div class="row errata">
+        <div class="col-sm-6 text-right">Modified By: </div>
+        <div class="col-sm-6 text-left">{{profile.modifiedBy}}</div>
+    </div>
+    <div class="row errata">
+        <div class="col-sm-6 text-right">Session started: </div>
+        <div class="col-sm-6 text-left">{{issuedAt}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <a class="btn btn-secondary" href="/c2id/basic/profile/edit">Edit profile</a>
+            <a class="btn btn-secondary" href="/c2id/basic/profile/activity">View Activity</a>
+        </div>
+    </div>
+</div>
+{{/partials/detailPage}}

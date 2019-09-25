@@ -1,0 +1,42 @@
+<header class="masthead mb-auto">
+  <nav class="nav navbar-expand-lg navbar-default">
+    <a class="navbar-brand" href="#">Samples</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item {{#matches "home" currentUri}}active{{/matches}}"><a class="nav-link"
+              href="/c2id/home">Home</a></li>
+          <li class="nav-item {{#matches ".*/features" currentUri}}active{{/matches}}"><a class="nav-link"
+              href="/c2id/home/features">Features</a></li>
+          <li class="nav-item {{#matches ".*/contacts" currentUri}}active{{/matches}}"><a class="nav-link"
+              href="/c2id/home/contacts">Contact</a></li>
+          {{#if authorized}}
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="logged in as {{username}}" role="button" aria-haspopup="true"
+              aria-expanded="false">
+              {{#if userPictureUrl}}
+              <img class="user-picture-small" src="{{userPictureUrl}}" alt="{{username}}"/>
+              {{else}}
+              <img class="user-picture-small" src="/static/images/defaultUserPicure.jpg" alt="{{username}}"/>
+              {{/if}}
+              <span class="user-name">{{preferredUsername}}</span>
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/c2id/basic/profile/view">Profile</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/c2id/api/auth/logout?see=/c2id/home/loggedout">Logout</a></li>
+            </ul>
+          </li>
+          {{else}}
+          <li class="nav-item"><a id="btnShowLogin" class="nav-link" href="#">Login</a></li>
+          {{/if}}
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+  </nav>
+</header>

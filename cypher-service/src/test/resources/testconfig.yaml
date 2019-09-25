@@ -1,0 +1,30 @@
+cypher:
+  cyphers:
+    internalConcealString:
+      algorithm: AES/ECB/PKCS5Padding
+      keyPath: test/aes256
+    externalConcealString:
+      algorithm: AES/ECB/PKCS5Padding
+      keyPath: test/aes256
+    endorser:
+      algorithm: SHA256withRSA
+      keyPath: test/rsa2048
+    semetric:
+      algorithm: AES/ECB/PKCS5Padding
+      keyPath: test/aes256
+    rsa: 
+      algorithm: RSA/ECB/PKCS1Padding
+      keyPath: test/rsa2048
+    passwordHash:
+      algorithm: PBKDF2WithHmacSHA512
+      salt: IGeecOf0QuizlIvuDejBOg==
+      iterations: 65536
+      keyLength: 512
+      
+key-service:
+  keystores:
+    test:
+      type: PKCS12
+      keyPath: test/
+      path: C:/Projects/org/daisleyharrison/security/cypher-service/src/test/resources/testkeystore.pkcs12
+      password: 123456

@@ -1,0 +1,7 @@
+bool: true
+string: This is a string (I change this to make the signature invalid)
+next: {bool: true, number1: 42, number2: 4.2, string: This is the next string, duration: P1DT2H3M4.321S}
+number1: 42
+number2: 4.2
+duration: P1DT2H3M4.321S
+signature: jqZ3iLs8+5NCm5e2alg6xmnyt5aTOhpM0W/JFVTM/j56EgoSR3sICJM+rG4o3IACaG5/i3z/GYdW2GOGOJQXfrddGdiMsm2yrUenzQiY+DsVVqacmbZ5anQSYryB6n6F2Q0nvVmoKFznv/h9kjJy9ivUlQLf0F8KwuG812bA00a0QAT512sBtP7eGJLS8vH+k6ceZV0qmMW6LqUl71H5aPHrydxMAGiG9yv7F+WhyXtPnGGbBkoz/jBidCnqp8kDyMfW/udpi+WmkL5RSh5fEihiAW8wNYJ4AiHC3CptCfNLbdXL7z8JVEgWmme1hmGCotIEb3kTV3lhoSQPYTbEhQ==

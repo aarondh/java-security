@@ -1,0 +1,92 @@
+{
+    ".vault": {
+        ":action": "keep",
+        "vault.json": {
+            ":content": {
+                "issuerDN": "DN=vault-service",
+                "subjectDN": "DN=vault-service",
+                "keyStore": {
+                    "path": "keystore.pkcs12",
+                    "type": "PKCS12",
+                    "password": "123456"
+                },
+                "masterCypher": {
+                    "keyPath": ".vault/master",
+                    "algorithm": "AES/ECB/PKCS5Padding",
+                    "keySize": 128
+                },
+                "tokenSignatureCypher": {
+                    "keyPath": ".vault/token",
+                    "algorithm": "RS256",
+                    "keySize": 2048
+                },
+                "servicePrincipleTTL": 64800,
+                "userPrincipleTTL": 64800,
+                "servicePrincipleTokenTTL": 60,
+                "userPrincipleTokenTTL": 60,
+                "keyTTL": 10
+            }
+        },
+        "keystore.pkcs12": {
+            ":action": "keep",
+            ":binaryContent": ""
+        }
+    },
+    "namespace.json": {
+        ":content": {
+            "root": true,
+            "cypher": {
+                "keyPath": ".vault/master",
+                "algorithm": "AES/ECB/PKCS5Padding"
+            }
+        }
+    },
+    "sys": {
+        ":action": "keep",
+        "namespace.json": {
+            ":content": {
+                "root": true,
+                "cypher": {
+                    "keyPath": ".vault/master",
+                    "algorithm": "AES/ECB/PKCS5Padding"
+                }
+            }
+        },
+        "policy": {
+            "root": {
+                ":content": {
+                    "path": "**",
+                    "capabilities": [
+                        "create",
+                        "read",
+                        "update",
+                        "delete",
+                        "list",
+                        "manage"
+                    ]
+                }
+            }
+        },
+        "token": {
+            ":action": "clean",
+            ".revoked": {
+                ":action": "clean"
+            }
+        },
+        "principle": {
+            "root": {
+                ":content": {
+                    "jti": "99c3e9aa-0aa6-4cd2-8a4d-91b7b8e3441e",
+                    "iss": "vault-service",
+                    "aud": "vault-service",
+                    "sub": "99c3e9aa-0aa6-4cd2-8a4d-91b7b8e3441e",
+                    "pol": [
+                        "root"
+                    ],
+                    "preferred_username": "root",
+                    "pass": "password"
+                }
+            }
+        }
+    }
+}

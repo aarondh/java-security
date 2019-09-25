@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <link href="static/css/base.css" rel="stylesheet"/>
+            <link href="static/images/favicon.ico" rel="icon"/>
+            <title>
+                Samples - 
+                {% block title %}{% endblock %}
+            </title>
+            <script type="text/javascript" crossorigin="anonymous" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script type="text/javascript" src="/static/js/basic.js"></script>
+        {% endblock %}
+</head>
+<body>
+    <div id="content"> {% block content %}{% endblock %}
+        </div>
+        <footer>
+            {% block footer %}
+                &copy; Copyright 2019
+                <a href="http://daisley-harrison.com/">Aaron G. Daisley-Harrison</a><br/>Written by
+                <a href="http://blog.daisley-harrison.com/">Aaron G Daisley-Harrison</a>.
+            {% endblock %}
+            <footer></body>
+        </html>
+    </body>
+</html>

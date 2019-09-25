@@ -1,0 +1,8 @@
+google:
+  client_id: 883258534839-2u1g5loomng57574j7aa6r60uocfvo26.apps.googleusercontent.com
+  client_secret: CEbCrg0jRnTcxP4erEBO_9lr
+  redirect_uri: http://127.0.0.1/api/openid_response
+microsoft:
+  client_id:  fb0eeb43-d1e8-4b39-8de2-12c361029799
+  client_secret: Rx3XGaMrbgr8AmvOx9Jovx1EGJAX@@=.
+  redirect_uri: http://127.0.0.1/api/openid_response

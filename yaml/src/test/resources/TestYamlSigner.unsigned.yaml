@@ -1,0 +1,6 @@
+bool: true
+string: This is a string
+next: {bool: true, number1: 42, number2: 4.2, string: This is the next string, duration: P1DT2H3M4.321S}
+number1: 42
+number2: 4.2
+duration: P1DT2H3M4.321S

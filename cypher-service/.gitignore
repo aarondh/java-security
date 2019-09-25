@@ -1,0 +1,7 @@
+*.jar
+/**/.classpath
+/**/.project
+/**/.settings
+/**/.vscode
+/**/target
+/org.daisleyharrison.security.code-workspace

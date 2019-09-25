@@ -1,0 +1,19 @@
+<!doctype html>
+<html class="cover-body" lang="en">
+  {{>partials/head title=title}} 
+
+  <body class="cover-body text-center {{#if authorized}}body-authorized{{else}}body-anonymous{{/if}}">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+     {{>partials/header section=section}}
+
+      <main role="main" class="inner cover">
+        {{> @partial-block}}
+      </main>
+
+    {{>partials/footer script=script}}
+
+    </div>
+  </body>
+</html>

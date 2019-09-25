@@ -1,0 +1,15 @@
+server:
+    port: 8082
+spring:
+    application:
+        name: web-front-end
+identity:
+    client:
+        id: test
+        secret: pa55w0rd1
+    user:
+        name: testb
+        password: pa55w0rd2
+
+
+
